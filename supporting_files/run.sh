@@ -62,22 +62,23 @@ mkdir -p /var/run/mysqld
 chmod -R 770 /var/lib/mysql
 chmod -R 770 /var/run/mysqld
 
-if [ -n "$VAGRANT_OSX_MODE" ];then
+echo "User test"
+#if [ -n "$VAGRANT_OSX_MODE" ];then
     echo "Setting up users and groups"
     usermod -u $DOCKER_USER_ID www-data
     groupmod -g $(($DOCKER_USER_GID + 10000)) $(getent group $DOCKER_USER_GID | cut -d: -f1)
     groupmod -g ${DOCKER_USER_GID} staff
-else
+#else
     echo "Allowing Apache/PHP to write to the app"
     # Tweaks to give Apache/PHP write permissions to the app
     chown -R www-data:staff /var/www
     chown -R www-data:staff /app
-fi
+#fi
 
 echo "Allowing Apache/PHP to write to MySQL"
-chown -R www-data:staff /var/lib/mysql
-chown -R www-data:staff /var/run/mysqld
-chown -R www-data:staff /var/log/mysql
+#chown -R www-data:staff /var/lib/mysql
+#chown -R www-data:staff /var/run/mysqld
+#chown -R www-data:staff /var/log/mysql
 
 if [ -e /var/run/mysqld/mysqld.sock ];then
     echo "Removing MySQL socket"
