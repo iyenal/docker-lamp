@@ -1,6 +1,8 @@
 # ![Docker-LAMP][logo]
 Docker-LAMP is a set of docker images that include the phusion baseimage (16.04 and 18.04 varieties), along with a LAMP stack ([Apache][apache], [MySQL][mysql] and [PHP][php]) all in one handy package.
 
+**THIS FORK IS AN EDIT TO MAKE IT COMPATIBLE ON DOCKER WINDOWS**
+
 With Ubuntu **18.04** amd **16.04** images on the `latest-1804` and `latest-1604` tags, Docker-LAMP is flexible enough to use with all of your LAMP projects.
 
 [![Build Status][shield-build-status]][info-build-status]
